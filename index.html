@@ -1,0 +1,820 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FreshGrocer Kenya Market</title>
+    <meta name="description" content="Fresh produce from Kenyan farms delivered to your doorstep" />
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="container">
+          <div class="header-content">
+            <div class="logo">
+              <a href="#" data-page="home">
+                <span class="logo-icon">🌿</span>
+                <span class="logo-text">FreshGrocer</span>
+              </a>
+            </div>
+            <nav class="nav">
+              <ul class="nav-list">
+                <li><a href="#" data-page="home" class="nav-link">Home</a></li>
+                <li><a href="#" data-page="shop" class="nav-link">Shop</a></li>
+                <li><a href="#" data-page="about" class="nav-link">About</a></li>
+                <li><a href="#" data-page="contact" class="nav-link">Contact</a></li>
+              </ul>
+            </nav>
+            <div class="header-actions">
+              <div class="lang-switch">
+                <input type="checkbox" id="lang-toggle" class="sr-only">
+                <label for="lang-toggle" class="lang-slider"></label>
+                <span class="lang-label">EN/SW</span>
+              </div>
+              <a href="#" data-page="cart" class="cart-btn">
+                <span class="cart-icon">🛒</span>
+                <span class="cart-count">0</span>
+              </a>
+              <div class="auth-buttons">
+                <a href="#" data-page="login" class="auth-link" id="loginBtn">Sign In</a>
+                <a href="#" data-page="signup" class="auth-link" id="signupBtn">Sign Up</a>
+              </div>
+              <div class="user-menu hidden">
+                <div class="user-info">
+                  <span class="user-name">User</span>
+                  <button class="logout-btn">Sign Out</button>
+                </div>
+              </div>
+              <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main-content">
+        <!-- Page content will be injected here by JavaScript -->
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-columns">
+            <div class="footer-column">
+              <h3 class="footer-title">FreshGrocer</h3>
+              <p>Fresh produce from Kenyan farms delivered straight to your doorstep.</p>
+              <div class="social-links">
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Twitter</a>
+              </div>
+            </div>
+            <div class="footer-column">
+              <h3 class="footer-title">Quick Links</h3>
+              <ul class="footer-links">
+                <li><a href="#" data-page="home">Home</a></li>
+                <li><a href="#" data-page="shop">Shop</a></li>
+                <li><a href="#" data-page="about">About</a></li>
+                <li><a href="#" data-page="contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3 class="footer-title">Contact Us</h3>
+              <address>
+                <p>123 Nairobi Way, Kenya</p>
+                <p>Phone: +254 712 345 678</p>
+                <p>Email: info@freshgrocer.ke</p>
+              </address>
+            </div>
+            <div class="footer-column">
+              <h3 class="footer-title">Newsletter</h3>
+              <p>Subscribe for updates on new products and special offers.</p>
+              <form class="newsletter-form">
+                <input type="email" placeholder="Your email" required>
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2025 FreshGrocer. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Page Templates (Hidden by default) -->
+
+      <!-- Home Page -->
+      <template id="home-template">
+        <div class="home-page">
+          <!-- Hero Slider -->
+          <section class="hero-slider">
+            <div class="slider-container">
+              <div class="slide active">
+                <div class="slide-content">
+                  <h1>Fresh Groceries From Kenyan Farms</h1>
+                  <p>Direct from local farmers to your table</p>
+                  <a href="#" data-page="shop" class="cta-button">Shop Now</a>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="slide-content">
+                  <h1>Organic Vegetables & Fruits</h1>
+                  <p>Support local farmers and eat healthier</p>
+                  <a href="#" data-page="shop" class="cta-button">Explore</a>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="slide-content">
+                  <h1>Fast Delivery Across Kenya</h1>
+                  <p>Same-day delivery in Nairobi</p>
+                  <a href="#" data-page="shop" class="cta-button">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <div class="slider-controls">
+              <button class="prev-slide">&lt;</button>
+              <button class="next-slide">&gt;</button>
+            </div>
+          </section>
+
+          <!-- Categories Section -->
+          <section class="categories-section">
+            <div class="container">
+              <div class="section-header">
+                <h2 class="section-title">Shop By Category</h2>
+                <a href="#" data-page="shop" class="view-all">View All</a>
+              </div>
+              <div class="categories-grid" id="categories-grid">
+                <!-- Categories will be dynamically populated -->
+              </div>
+            </div>
+          </section>
+
+          <!-- Featured Products Section -->
+          <section class="featured-products">
+            <div class="container">
+              <div class="section-header">
+                <h2 class="section-title">Featured Products</h2>
+                <a href="#" data-page="shop" class="view-all">View All</a>
+              </div>
+              <div class="products-grid" id="featured-products-grid">
+                <!-- Products will be dynamically populated -->
+              </div>
+            </div>
+          </section>
+
+          <!-- Farm to Table Banner -->
+          <section class="farm-banner">
+            <div class="container">
+              <div class="banner-content">
+                <div class="banner-text">
+                  <h2>From Farm to Table</h2>
+                  <p>We source our produce directly from small-scale farmers across Kenya, ensuring freshness and supporting local agriculture.</p>
+                  <a href="#" data-page="about" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="banner-icon">
+                  <span class="emoji">🌱</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Testimonials Section -->
+          <section class="testimonials">
+            <div class="container">
+              <h2 class="section-title text-center">What Our Customers Say</h2>
+              <div class="testimonials-grid" id="testimonials-grid">
+                <!-- Testimonials will be dynamically populated -->
+              </div>
+            </div>
+          </section>
+
+          <!-- How It Works -->
+          <section class="how-it-works">
+            <div class="container">
+              <h2 class="section-title text-center">How It Works</h2>
+              <div class="steps-grid">
+                <div class="step">
+                  <div class="step-icon">🛒</div>
+                  <h3>1. Shop Online</h3>
+                  <p>Browse our fresh produce and add items to your cart.</p>
+                </div>
+                <div class="step">
+                  <div class="step-icon">📦</div>
+                  <h3>2. We Prepare</h3>
+                  <p>We carefully select and package your items from local farms.</p>
+                </div>
+                <div class="step">
+                  <div class="step-icon">🚚</div>
+                  <h3>3. Fast Delivery</h3>
+                  <p>Enjoy same-day delivery in Nairobi and next-day nationwide.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- CTA Section -->
+          <section class="cta-section">
+            <div class="container">
+              <h2>Ready to order fresh groceries?</h2>
+              <p>Get fresh produce delivered to your doorstep from Kenyan farmers.</p>
+              <a href="#" data-page="shop" class="cta-button">Start Shopping</a>
+            </div>
+          </section>
+        </div>
+      </template>
+
+      <!-- Shop Page -->
+      <template id="shop-template">
+        <div class="shop-page">
+          <div class="container">
+            <div class="shop-header">
+              <h1 class="shop-title">All Products</h1>
+              <p class="shop-description">Browse our selection of fresh, locally-sourced products.</p>
+            </div>
+
+            <div class="shop-controls">
+              <form class="search-form">
+                <div class="search-input-wrapper">
+                  <input type="text" id="product-search" placeholder="Search products..." class="search-input">
+                  <button type="submit" class="search-btn">🔍</button>
+                </div>
+              </form>
+
+              <button class="filter-btn" id="mobile-filter-btn">
+                Filters
+              </button>
+
+              <div class="sort-dropdown">
+                <select id="sort-select">
+                  <option value="featured">Featured</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="name-asc">Name: A to Z</option>
+                  <option value="name-desc">Name: Z to A</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="shop-content">
+              <aside class="shop-sidebar">
+                <div class="filter-group">
+                  <h3 class="filter-title">Categories</h3>
+                  <div class="filter-options" id="category-filters">
+                    <!-- Categories will be dynamically populated -->
+                  </div>
+                </div>
+
+                <div class="filter-group">
+                  <h3 class="filter-title">Price Range</h3>
+                  <div class="price-inputs">
+                    <div class="price-input">
+                      <label for="min-price">Min</label>
+                      <input type="number" id="min-price" value="0" min="0">
+                    </div>
+                    <div class="price-input">
+                      <label for="max-price">Max</label>
+                      <input type="number" id="max-price" value="1000" min="0">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="filter-group">
+                  <h3 class="filter-title">Availability</h3>
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="in-stock-only">
+                    <span>In Stock Only</span>
+                  </label>
+                </div>
+
+                <button id="reset-filters" class="reset-btn">Reset Filters</button>
+              </aside>
+
+              <div class="products-grid-container">
+                <div class="products-grid" id="shop-products-grid">
+                  <!-- Products will be dynamically populated -->
+                </div>
+                <div class="no-products-message hidden">
+                  <p>No products found. Try adjusting your filters.</p>
+                  <button class="reset-btn">Reset Filters</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <!-- Product Detail Page -->
+      <template id="product-detail-template">
+        <div class="product-detail-page">
+          <div class="container">
+            <div class="breadcrumbs">
+              <a href="#" data-page="home">Home</a> &gt;
+              <a href="#" data-page="shop">Shop</a> &gt;
+              <span class="current-page">Product</span>
+            </div>
+
+            <div class="product-detail" id="product-detail">
+              <!-- Product details will be dynamically populated -->
+            </div>
+
+            <section class="related-products">
+              <h2 class="section-title">Related Products</h2>
+              <div class="products-grid" id="related-products-grid">
+                <!-- Related products will be dynamically populated -->
+              </div>
+            </section>
+          </div>
+        </div>
+      </template>
+
+      <!-- Cart Page -->
+      <template id="cart-template">
+        <div class="cart-page">
+          <div class="container">
+            <h1 class="page-title">Your Cart</h1>
+
+            <div class="cart-content" id="cart-content">
+              <div class="cart-items" id="cart-items">
+                <!-- Cart items will be dynamically populated -->
+              </div>
+
+              <div class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-line">
+                  <span>Subtotal:</span>
+                  <span id="cart-subtotal">KES 0</span>
+                </div>
+                <div class="summary-line">
+                  <span>Delivery:</span>
+                  <span id="cart-delivery">KES 0</span>
+                </div>
+                <div class="summary-line total">
+                  <span>Total:</span>
+                  <span id="cart-total">KES 0</span>
+                </div>
+                <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
+                <button id="continue-shopping" class="continue-btn" data-page="shop">Continue Shopping</button>
+              </div>
+            </div>
+
+            <div class="empty-cart hidden" id="empty-cart">
+              <div class="empty-cart-message">
+                <div class="empty-cart-icon">🛒</div>
+                <h2>Your cart is empty</h2>
+                <p>Looks like you haven't added any products to your cart yet.</p>
+                <a href="#" data-page="shop" class="continue-btn">Start Shopping</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <!-- Checkout Page -->
+      <template id="checkout-template">
+        <div class="checkout-page">
+          <div class="container">
+            <h1 class="page-title">Checkout</h1>
+            
+            <div class="checkout-content">
+              <div class="checkout-form-container">
+                <form id="checkout-form" class="checkout-form">
+                  <div class="form-section">
+                    <h2>Delivery Information</h2>
+                    
+                    <div class="form-group">
+                      <label for="fullname">Full Name</label>
+                      <input type="text" id="fullname" name="fullname" required>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="phone">Phone Number</label>
+                      <input type="tel" id="phone" name="phone" placeholder="+254" required>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="address">Address</label>
+                      <input type="text" id="address" name="address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="delivery-zone">Delivery Zone</label>
+                      <select id="delivery-zone" name="delivery-zone" required>
+                        <option value="">Select a delivery zone</option>
+                        <!-- Delivery zones will be populated dynamically -->
+                      </select>
+                      <div class="delivery-info">
+                        <span id="delivery-fee">Delivery Fee: KES 0</span>
+                        <span id="delivery-time">Est. Delivery: N/A</span>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="notes">Delivery Notes (Optional)</label>
+                      <textarea id="notes" name="notes" placeholder="Special instructions for delivery"></textarea>
+                    </div>
+                  </div>
+                  
+                  <div class="form-section">
+                    <h2>Payment Method</h2>
+                    <div class="payment-methods">
+                      <div class="payment-method active">
+                        <div class="payment-method-header">
+                          <input type="radio" id="mpesa" name="payment" value="mpesa" checked>
+                          <label for="mpesa">M-Pesa</label>
+                        </div>
+                        <div class="payment-method-body">
+                          <p>You'll receive a prompt on your mobile to complete payment.</p>
+                        </div>
+                      </div>
+                      
+                      <div class="payment-method">
+                        <div class="payment-method-header">
+                          <input type="radio" id="cash" name="payment" value="cash">
+                          <label for="cash">Cash on Delivery</label>
+                        </div>
+                        <div class="payment-method-body">
+                          <p>Pay with cash when your order is delivered.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <button type="submit" class="mpesa-button">Complete Order</button>
+                </form>
+              </div>
+              
+              <div class="checkout-summary">
+                <h2>Order Summary</h2>
+                <div class="checkout-items" id="checkout-items">
+                  <!-- Checkout items will be dynamically populated -->
+                </div>
+                <div class="summary-totals">
+                  <div class="summary-line">
+                    <span>Subtotal:</span>
+                    <span id="checkout-subtotal">KES 0</span>
+                  </div>
+                  <div class="summary-line">
+                    <span>Delivery:</span>
+                    <span id="checkout-delivery">KES 0</span>
+                  </div>
+                  <div class="summary-line total">
+                    <span>Total:</span>
+                    <span id="checkout-total">KES 0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <!-- Login Page -->
+      <template id="login-template">
+        <div class="auth-page">
+          <div class="container">
+            <div class="auth-card">
+              <div class="auth-header">
+                <h1>Sign In</h1>
+                <p>Welcome back to FreshGrocer</p>
+              </div>
+              
+              <form id="login-form" class="auth-form">
+                <div class="form-error" id="login-error"></div>
+                
+                <div class="form-group">
+                  <label for="login-email">Email</label>
+                  <input id="login-email" name="email" type="email" required>
+                  <div class="error-message" data-for="login-email"></div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="password-label">
+                    <label for="login-password">Password</label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                  </div>
+                  <input id="login-password" name="password" type="password" required>
+                  <div class="error-message" data-for="login-password"></div>
+                </div>
+                
+                <button type="submit" class="auth-button" id="login-submit-btn">Sign In</button>
+              </form>
+              
+              <div class="auth-footer">
+                <p>Don't have an account? <a href="#" data-page="signup">Sign up</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <!-- Signup Page -->
+      <template id="signup-template">
+        <div class="auth-page">
+          <div class="container">
+            <div class="auth-card">
+              <div class="auth-header">
+                <h1>Create Account</h1>
+                <p>Join FreshGrocer for fresh produce</p>
+              </div>
+              
+              <form id="signup-form" class="auth-form">
+                <div class="form-error" id="signup-error"></div>
+                
+                <div class="form-group">
+                  <label for="signup-name">Full Name</label>
+                  <input id="signup-name" name="name" type="text" required>
+                  <div class="error-message" data-for="signup-name"></div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="signup-email">Email</label>
+                  <input id="signup-email" name="email" type="email" required>
+                  <div class="error-message" data-for="signup-email"></div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="signup-phone">Phone Number</label>
+                  <input id="signup-phone" name="phone" type="tel" placeholder="+254" required>
+                  <div class="error-message" data-for="signup-phone"></div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="signup-password">Password</label>
+                  <input id="signup-password" name="password" type="password" required>
+                  <div class="error-message" data-for="signup-password"></div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="signup-confirm-password">Confirm Password</label>
+                  <input id="signup-confirm-password" name="confirmPassword" type="password" required>
+                  <div class="error-message" data-for="signup-confirm-password"></div>
+                </div>
+                
+                <button type="submit" class="auth-button" id="signup-submit-btn">Create Account</button>
+              </form>
+              
+              <div class="auth-footer">
+                <p>Already have an account? <a href="#" data-page="login">Sign in</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <!-- About Page -->
+      <template id="about-template">
+        <div class="about-page">
+          <div class="container">
+            <div class="about-header">
+              <h1 class="page-title">About FreshGrocer</h1>
+              <p class="lead-text">Connecting Kenyan farmers directly with consumers since 2023.</p>
+            </div>
+            
+            <section class="about-section">
+              <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" alt="Farm in Kenya">
+              </div>
+              <div class="about-text">
+                <h2>Our Story</h2>
+                <p>FreshGrocer began with a simple idea: connect Kenyan farmers directly to consumers, cutting out middlemen and ensuring farmers receive fair prices while consumers get the freshest produce possible.</p>
+                <p>Founded in 2023 by a team passionate about sustainable agriculture and food security in Kenya, we've grown to partner with over 200 small-scale farmers across the country.</p>
+              </div>
+            </section>
+            
+            <section class="mission-section">
+              <div class="mission-content">
+                <h2>Our Mission</h2>
+                <p>We're on a mission to revolutionize Kenya's food supply chain by:</p>
+                <ul>
+                  <li>Providing fair compensation to local farmers</li>
+                  <li>Reducing food waste through efficient distribution</li>
+                  <li>Making fresh, high-quality produce accessible to all Kenyans</li>
+                  <li>Supporting sustainable farming practices</li>
+                </ul>
+              </div>
+              <div class="mission-icon">🌍</div>
+            </section>
+            
+            <section class="farmers-section">
+              <h2 class="section-title text-center">Meet Our Farmers</h2>
+              <div class="farmers-grid">
+                <div class="farmer-card">
+                  <div class="farmer-image">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Farmer John">
+                  </div>
+                  <h3>John Mwangi</h3>
+                  <p class="farmer-location">Nakuru County</p>
+                  <p>Growing organic vegetables for over 15 years using traditional methods.</p>
+                </div>
+                <div class="farmer-card">
+                  <div class="farmer-image">
+                    <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="Farmer Jane">
+                  </div>
+                  <h3>Jane Wambui</h3>
+                  <p class="farmer-location">Kiambu County</p>
+                  <p>Specializes in a variety of fruits including passion fruit and tree tomatoes.</p>
+                </div>
+                <div class="farmer-card">
+                  <div class="farmer-image">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Farmer David">
+                  </div>
+                  <h3>David Odhiambo</h3>
+                  <p class="farmer-location">Kisumu County</p>
+                  <p>Pioneer in sustainable dairy farming with free-range cows and organic feed.</p>
+                </div>
+              </div>
+            </section>
+            
+            <section class="impact-section">
+              <h2 class="section-title text-center">Our Impact</h2>
+              <div class="impact-stats">
+                <div class="impact-stat">
+                  <div class="stat-number">200+</div>
+                  <div class="stat-label">Partner Farmers</div>
+                </div>
+                <div class="impact-stat">
+                  <div class="stat-number">5000+</div>
+                  <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="impact-stat">
+                  <div class="stat-number">30%</div>
+                  <div class="stat-label">Higher Farmer Income</div>
+                </div>
+                <div class="impact-stat">
+                  <div class="stat-number">10+</div>
+                  <div class="stat-label">Counties Served</div>
+                </div>
+              </div>
+            </section>
+            
+            <section class="join-section">
+              <div class="join-content">
+                <h2>Join Us in Supporting Local Agriculture</h2>
+                <p>Every purchase you make directly supports Kenyan farmers and sustainable agricultural practices.</p>
+                <a href="#" data-page="shop" class="cta-button">Shop Our Produce</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </template>
+
+      <!-- Contact Page -->
+      <template id="contact-template">
+        <div class="contact-page">
+          <div class="container">
+            <div class="contact-header">
+              <h1 class="page-title">Contact Us</h1>
+              <p class="lead-text">We'd love to hear from you! Reach out with any questions, suggestions, or feedback.</p>
+            </div>
+            
+            <div class="contact-content">
+              <div class="contact-form-container">
+                <form id="contact-form" class="contact-form">
+                  <div class="form-group">
+                    <label for="contact-name">Your Name</label>
+                    <input type="text" id="contact-name" name="name" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="contact-email">Email Address</label>
+                    <input type="email" id="contact-email" name="email" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="contact-subject">Subject</label>
+                    <input type="text" id="contact-subject" name="subject" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" name="message" rows="6" required></textarea>
+                  </div>
+                  
+                  <button type="submit" class="contact-submit-btn">Send Message</button>
+                </form>
+              </div>
+              
+              <div class="contact-info">
+                <div class="info-block">
+                  <h3>Visit Us</h3>
+                  <address>
+                    <p>123 Nairobi Way</p>
+                    <p>Westlands, Nairobi</p>
+                    <p>Kenya</p>
+                  </address>
+                </div>
+                
+                <div class="info-block">
+                  <h3>Call Us</h3>
+                  <p>Phone: +254 712 345 678</p>
+                  <p>Mon-Fri: 8:00 AM - 6:00 PM</p>
+                  <p>Sat: 9:00 AM - 4:00 PM</p>
+                </div>
+                
+                <div class="info-block">
+                  <h3>Email Us</h3>
+                  <p>General: info@freshgrocer.ke</p>
+                  <p>Support: help@freshgrocer.ke</p>
+                  <p>Orders: orders@freshgrocer.ke</p>
+                </div>
+                
+                <div class="info-block">
+                  <h3>Follow Us</h3>
+                  <div class="social-links">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Twitter</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127672.75772082225!2d36.757407887646355!3d-1.2832593177393851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1714671000000!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <!-- Not Found Page -->
+      <template id="not-found-template">
+        <div class="not-found-page">
+          <div class="container">
+            <div class="not-found-content">
+              <div class="not-found-emoji">😕</div>
+              <h1>Page Not Found</h1>
+              <p>Sorry, the page you're looking for doesn't exist.</p>
+              <a href="#" data-page="home" class="btn">Return to Home</a>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <!-- Toast Notifications -->
+      <div id="toast-container" class="toast-container"></div>
+
+      <!-- Loading Spinner -->
+      <div id="loading-spinner" class="loading-spinner hidden">
+        <div class="spinner"></div>
+      </div>
+
+      <!-- Mobile Filters (For Shop Page) -->
+      <div id="mobile-filters" class="mobile-filters">
+        <div class="mobile-filters-header">
+          <h3>Filters</h3>
+          <button id="close-filters">×</button>
+        </div>
+        <div class="mobile-filters-content">
+          <!-- Filter content will be cloned from desktop filters -->
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-header">
+          <div class="logo">FreshGrocer</div>
+          <button id="close-mobile-menu">×</button>
+        </div>
+        <nav class="mobile-nav">
+          <ul>
+            <li><a href="#" data-page="home">Home</a></li>
+            <li><a href="#" data-page="shop">Shop</a></li>
+            <li><a href="#" data-page="about">About</a></li>
+            <li><a href="#" data-page="contact">Contact</a></li>
+            <li><a href="#" data-page="cart">Cart <span class="mobile-cart-count">0</span></a></li>
+            <li class="auth-links">
+              <a href="#" data-page="login" id="mobile-login-btn">Sign In</a>
+              <a href="#" data-page="signup" id="mobile-signup-btn">Sign Up</a>
+            </li>
+            <li class="user-menu-mobile hidden">
+              <span class="user-name-mobile">User</span>
+              <button class="logout-btn-mobile">Sign Out</button>
+            </li>
+          </ul>
+        </nav>
+        <div class="mobile-lang-switch">
+          <span>Language:</span>
+          <div class="lang-switch">
+            <input type="checkbox" id="mobile-lang-toggle" class="sr-only">
+            <label for="mobile-lang-toggle" class="lang-slider"></label>
+            <span class="lang-label">EN/SW</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overlay -->
+      <div id="overlay" class="overlay hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
